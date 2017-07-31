@@ -1,1 +1,1 @@
-require('./src/main.process').run();
+require('./src/main.process').run().catch((error) => { throw new Error(error); });
