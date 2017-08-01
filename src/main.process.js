@@ -46,7 +46,10 @@ const mainProcess = async () => {
         }
         console.log('version 1.0.0');
         console.log();
-        console.log(`Using Artifacter API at ${artifacter.artifacterApi}`);
+        if (process.env.ARTIFACTER_API == null) {
+            console.log('ARTIFACTER_API env variable is not set!, using the default configuration');
+        }
+        console.log(`Using Artifacter API at '${artifacter.artifacterApi}'`);
         console.log();
 
         if (switchPresetFormOptions != null) {
