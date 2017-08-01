@@ -1,0 +1,27 @@
+{
+    "$configuration": "micro-service-v1.fc",
+    "$blueprint": "micro-service-v1.bp",
+    "$task": "micro-service-expressjs",
+    "locationInfo": {
+        "business": "CMR",
+        "country": "CL"
+    },
+    "serviceInfo": {
+        "journeyName": "desconocimiento cargos",
+        "serviceAction": "GET",
+        "serviceResource": "consolidado movimientos"
+    },
+    "namingInfo": {
+        "businessObject": "tarjeta credito",
+        "discreetEntity": "movimientos",
+        "operation": "obtener"
+    },
+    "technicalInfo": {
+        "dockerImageName": "super-img-dock",
+        "servicePort": 8080
+    },
+    "personalInfo": {
+        "name": "Arturo Saavedra",
+        "email": "aisaavedra@falabella.cl"
+    }
+}
