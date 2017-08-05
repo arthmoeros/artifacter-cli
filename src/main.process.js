@@ -44,7 +44,7 @@ const mainProcess = async () => {
         } else {
             console.log('Artifacter Command Line Interface (full interactive)')
         }
-        console.log('version 1.0.0');
+        console.log('version 1.0.4');
         console.log();
         if (process.env.ARTIFACTER_API == null) {
             console.log('ARTIFACTER_API env variable is not set!, using the default configuration');
