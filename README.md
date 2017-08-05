@@ -1,4 +1,4 @@
-# ![artifacter-logo](/src/assets/img/rsz_artifacter-logo.png)@artifacter/cli
+# ![artifacter-logo](https://raw.githubusercontent.com/arthmoeros/artifacter-ui/master/src/assets/img/rsz_artifacter-logo.png)@artifacter/cli
 
 ### Command Line Interface for Artifacter
 
