@@ -30,7 +30,7 @@ Using Artifacter API at 'http://localhost:8080'
 ```
 
 ##### Form preset + Interactive run
-If you use the *--form* switch, which specifies both the Form Configuration and Form Index to use, it will start asking only for the input of the preset form, the format is *<form-configuration>,<form-index>*
+If you use the *--form* switch, which specifies both the Form Configuration and Form Index to use, it will start asking only for the input of the preset form, the format is *[form-configuration],[form-index]*
 
 ```bash
 artifacter --form 1,1
