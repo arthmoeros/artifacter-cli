@@ -1,5 +1,5 @@
 const interface = require('readline-sync');
-const artifacter = require('./artifacter.service');
+const qsdt = require('./qsdt.service');
 const fs = require('fs');
 
 let switchUseJson = false;
@@ -38,18 +38,18 @@ const mainProcess = async () => {
     let requestBody = null;
     if (!switchUseJson) {
         let input = null;
-        let forms = await artifacter.getFormConfigurations();
+        let forms = await qsdt.getFormConfigurations();
         if (switchPresetFormOptions != null) {
-            console.log('Artifacter Command Line Interface (Forms preset + interactive)');
+            console.log('qsdt Command Line Interface (Forms preset + interactive)');
         } else {
-            console.log('Artifacter Command Line Interface (full interactive)')
+            console.log('qsdt Command Line Interface (full interactive)')
         }
         console.log('version 1.0.4');
         console.log();
-        if (process.env.ARTIFACTER_API == null) {
-            console.log('ARTIFACTER_API env variable is not set!, using the default configuration');
+        if (process.env.QSDT_API == null) {
+            console.log('QSDT_API env variable is not set!, using the default configuration');
         }
-        console.log(`Using Artifacter API at '${artifacter.artifacterApi}'`);
+        console.log(`Using qsdt API at '${qsdt.qsdtApi}'`);
         console.log();
 
         if (switchPresetFormOptions != null) {
@@ -71,7 +71,7 @@ const mainProcess = async () => {
         console.log(`You have selected ${selectedFormConfig}`);
         console.log();
         console.log('Retrieving Form Configuration');
-        let formConfig = await artifacter.getFormConfiguration(selectedFormConfig);
+        let formConfig = await qsdt.getFormConfiguration(selectedFormConfig);
         console.log();
         console.log(`##### ${formConfig.$formsTitle}`);
         console.log(`### ${formConfig.$formsDescription}`);
@@ -99,17 +99,17 @@ const mainProcess = async () => {
         console.log("Preparing Body Request");
         requestBody = prepareRequestBody(JSON.parse(JSON.stringify(selectedForm.$requestSchema)));
     } else {
-        console.log('Artifacter Command Line Interface (JSON File load)')
+        console.log('qsdt Command Line Interface (JSON File load)')
         console.log('version 1.0.0');
         console.log();
-        console.log(`Using Artifacter API at ${artifacter.artifacterApi}`);
+        console.log(`Using qsdt API at ${qsdt.qsdtApi}`);
         console.log();
         requestBody = jsonFileContents;
     }
     console.log("Submitting generation request");
-    let location = await artifacter.requestArtifactGeneration(requestBody);
+    let location = await qsdt.requestArtifactGeneration(requestBody);
     console.log("Retrieving Artifact at " + location);
-    let fileName = await artifacter.downloadArtifact(location);
+    let fileName = await qsdt.downloadArtifact(location);
     console.log(`Artifact downloaded successfully as '${fileName}'`);
     if (!switchUseJson) {
         fs.writeFileSync(fileName + '-REQUEST.json', JSON.stringify(requestBody));

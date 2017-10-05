@@ -1,24 +1,24 @@
 {
-  "name": "@artifacter/cli",
+  "name": "@qsdt/cli",
   "version": "1.0.4",
-  "description": "Artifacter's Command Line Interface utility",
+  "description": "qsdt's Command Line Interface utility",
   "main": "index.js",
   "bin": {
-    "artifacter": "./artifacter.js"
+    "qsdt": "./qsdt.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arthmoeros/artifacter-cli.git"
+    "url": "git+https://github.com/arthmoeros/qsdt-cli.git"
   },
   "author": "arth",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/arthmoeros/artifacter-cli/issues"
+    "url": "https://github.com/arthmoeros/qsdt-cli/issues"
   },
-  "homepage": "https://github.com/arthmoeros/artifacter-cli#readme",
+  "homepage": "https://github.com/arthmoeros/qsdt-cli#readme",
   "dependencies": {
     "readline-sync": "^1.4.7",
     "request": "^2.81.0",

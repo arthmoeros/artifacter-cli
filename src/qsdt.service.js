@@ -1,11 +1,11 @@
 const requestApi = require('request-promise');
 const fs = require('fs');
 
-const artifacterApi = process.env.ARTIFACTER_API || 'http://localhost:8080';
+const qsdtApi = process.env.QSDT_API || 'http://localhost:8080';
 
 const getFormConfigurations = async () => {
     return requestApi.get({
-        uri: artifacterApi + '/forms',
+        uri: qsdtApi + '/forms',
         json: true
     })
         .then((result) => {
@@ -17,7 +17,7 @@ const getFormConfigurations = async () => {
 
 const getFormConfiguration = async (id) => {
     return requestApi.get({
-        uri: artifacterApi + '/forms/' + id,
+        uri: qsdtApi + '/forms/' + id,
         json: true
     })
         .then((result) => {
@@ -30,7 +30,7 @@ const getFormConfiguration = async (id) => {
 const requestArtifactGeneration = async (bodyRequest) => {
     return requestApi({
         method: 'POST',
-        uri: artifacterApi + '/generatedArtifacts',
+        uri: qsdtApi + '/generatedArtifacts',
         json: bodyRequest,
         resolveWithFullResponse: true
     })
@@ -42,7 +42,7 @@ const requestArtifactGeneration = async (bodyRequest) => {
 };
 
 const downloadArtifact = async (location) => {
-    return requestApi.get(artifacterApi + location, { encoding: null })
+    return requestApi.get(qsdtApi + location, { encoding: null })
         .then((response) => {
             let fileName = `generatedArtifacts-${new Date().getTime()}.zip`;
             fs.writeFileSync(fileName, response);
@@ -56,4 +56,4 @@ module.exports.downloadArtifact = downloadArtifact;
 module.exports.requestArtifactGeneration = requestArtifactGeneration;
 module.exports.getFormConfigurations = getFormConfigurations;
 module.exports.getFormConfiguration = getFormConfiguration;
-module.exports.artifacterApi = artifacterApi;
+module.exports.qsdtApi = qsdtApi;
