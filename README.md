@@ -1,9 +1,9 @@
 # ![qsdt-logo](https://raw.githubusercontent.com/arthmoeros/qsdt-ui/master/src/assets/img/rsz_qsdt-logo.png)@qsdt/cli
 
-### Command Line Interface for qsdt
+### Command Line Interface for QSDT
 
 #### What's this? - Intro
-This a Command Line Interface utility that connects to a running qsdt Web API and provides artifact generation through a CLI. It follows a similar workflow as @qsdt/ui
+This a Command Line Interface utility that connects to a running QSDT Web API and provides artifact generation through a CLI. It follows a similar workflow as @qsdt/ui
 
 #### How do I use this? - Install and options
 A global install via npm is suggested, like this:
@@ -12,7 +12,7 @@ A global install via npm is suggested, like this:
 npm install -g @qsdt/cli
 ```
 
-It requires setting the ***QSDT_API*** environment variable, which must contain the base url where qsdt's Web API is hosted, by default it goes to http://localhost:8080.
+It requires setting the ***QSDT_API*** environment variable, which must contain the base url where QSDT's Web API is hosted, by default it goes to http://localhost:8080.
 
 ```bash
 export QSDT_API=http://yourownapi:8888
